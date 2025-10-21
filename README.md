@@ -65,7 +65,7 @@ El sistema permite monitorear en tiempo real los niveles de CO, NO₂ y O₃ med
 # Desarrollo de Práctica
 ## Puertos
 #### Antes de comenzar, en la instancia creada en AWS se agregan los puertos desde la pestaña "Security Groups" para los servicios a utilizar:
-<img width="1919" height="873" alt="imagen" src="https://github.com/user-attachments/assets/59b23808-c53d-466b-b9e3-279e236e85cd" />
+<img width="1919" height="873" alt="Captura de pantalla 2025-10-20 220936" src="https://github.com/user-attachments/assets/b12b433f-228e-40c5-ad9d-8c33d9775b33" />
 
 ---
 
@@ -74,21 +74,20 @@ El sistema permite monitorear en tiempo real los niveles de CO, NO₂ y O₃ med
 ```bash
 sudo apt install -y mosquitto mosquitto-clients
 ```
-
-<img width="841" height="145" alt="imagen" src="https://github.com/user-attachments/assets/4b30ee11-5168-4bc0-bc0e-c45a82d17f80"/>
+<img width="841" height="145" alt="Captura de pantalla 2025-10-20 185216" src="https://github.com/user-attachments/assets/98a21d3e-85b6-48f3-a6a6-a66069995da2" />
 
 #### Activa y arranca el servicio
 ```bash
 sudo systemctl enable --now mosquitto
 sudo systemctl start mosquitto
 ```
-<img width="745" height="97" alt="imagen" src="https://github.com/user-attachments/assets/4b56dfe1-ae03-4cb0-9f15-5f31de191848" />
+<img width="745" height="97" alt="Captura de pantalla 2025-10-20 185358" src="https://github.com/user-attachments/assets/83093c34-f58a-49d6-a5cb-76ecc71bb7c5" />
 
 #### Verificamos que el servicio este corriendo
 ```bash
 systemctl status mosquitto
 ```
-<img width="1032" height="277" alt="imagen" src="https://github.com/user-attachments/assets/1ddf26cd-28d1-45f1-bab5-4efd02c8206a" />
+<img width="1032" height="277" alt="Captura de pantalla 2025-10-20 190105" src="https://github.com/user-attachments/assets/4b04349f-eb67-429f-9aea-7101030bc4bc" />
 
 ---
 
@@ -98,13 +97,14 @@ systemctl status mosquitto
 curl -fsSL https://repos.influxdata.com/influxdata-archive_compat.key | sudo gpg --dearmor -o /usr/share/keyrings/influxdata-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/influxdata-archive-keyring.gpg] https://repos.influxdata.com/debian stable main" | sudo tee /etc/apt/sources.list.d/influxdata.list
 ```
-<img width="1312" height="80" alt="imagen" src="https://github.com/user-attachments/assets/30b5788d-389e-413c-b2c6-160db814a27d" />
+<img width="1312" height="80" alt="Captura de pantalla 2025-10-20 191026" src="https://github.com/user-attachments/assets/7b551f5b-e403-448a-b0bd-ac1dda092239" />
 
 #### Instalar el servicio
 ```bash
 sudo apt install -y influxdb2
 ```
-<img width="635" height="119" alt="imagen" src="https://github.com/user-attachments/assets/8249b626-4d78-4863-a82c-e8eb723420b9" />
+<img width="635" height="119" alt="Captura de pantalla 2025-10-20 191609" src="https://github.com/user-attachments/assets/a37a209e-c71a-409f-8041-004b195a15bc" />
+
 
 #### Activar y arrancar el servicio
 ```bash
@@ -115,13 +115,14 @@ sudo systemctl start influxdb
 ```bash
 systemctl status influxdb
 ```
-<img width="1011" height="247" alt="imagen" src="https://github.com/user-attachments/assets/8c0a66ff-dd54-4e09-a122-2996bb4ab6fc" />
+<img width="1011" height="247" alt="Captura de pantalla 2025-10-20 191833" src="https://github.com/user-attachments/assets/d97bcc73-681f-4974-a00a-393258a8dd5a" />
+
 
 #### Por último, creamos nuestro setup de la base de datos
 ```bash
 influx setup
 ```
-<img width="785" height="349" alt="imagen" src="https://github.com/user-attachments/assets/98ba4fa5-54b0-4e79-966a-81986e8172a2" />
+<img width="785" height="349" alt="Captura de pantalla 2025-10-20 192628" src="https://github.com/user-attachments/assets/cbedbc9d-37d9-4997-81f2-04b995251e76" />
 
 Nota: la contraseña debe de ser mínimo de 8 dígitos.
 
@@ -132,32 +133,33 @@ Nota: la contraseña debe de ser mínimo de 8 dígitos.
 ```bash
 sudo apt install -y software-properties-common wget apt-transport-https
 ```
-<img width="1107" height="119" alt="imagen" src="https://github.com/user-attachments/assets/1bff8ddf-40ae-4be0-b85a-54df844c76a1" />
+<img width="1107" height="119" alt="Captura de pantalla 2025-10-20 193052" src="https://github.com/user-attachments/assets/a8f9c90a-8f24-412c-9f05-1a4e4d41dbf0" />
 
 #### Agregamos el repositorio oficial
 ```bash
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
 ```
+<img width="1080" height="138" alt="Captura de pantalla 2025-10-20 193048" src="https://github.com/user-attachments/assets/b8edd41c-ae70-4852-9196-d0e44a21f98c" />
 
 #### Instalar grafana
 ```bash
 sudo apt install -y grafana
 ```
-<img width="638" height="118" alt="imagen" src="https://github.com/user-attachments/assets/171144a3-e7cb-4e1a-bbfe-f3f58783825c" />
+<img width="638" height="118" alt="Captura de pantalla 2025-10-20 193936" src="https://github.com/user-attachments/assets/fd3035de-734f-46fc-a8de-28a62688639e" />
 
 #### Habilitar y arrancar
 ```bash
 sudo systemctl enable grafana-server
 sudo systemctl start grafana-server
 ```
-<img width="1488" height="122" alt="imagen" src="https://github.com/user-attachments/assets/d9fcde31-93d3-4ade-be1b-276cbc52eeda" />
+<img width="1488" height="122" alt="Captura de pantalla 2025-10-20 194056" src="https://github.com/user-attachments/assets/432b53d6-85cc-4173-8dbd-04de5f415cb1" />
 
 #### Verificamos el servicio
 ```bash
 systemctl status grafana-server
 ```
-<img width="1098" height="255" alt="imagen" src="https://github.com/user-attachments/assets/56375e26-41bc-44ec-ab40-b3b15cb1a0f4" />
+<img width="1098" height="255" alt="Captura de pantalla 2025-10-20 194214" src="https://github.com/user-attachments/assets/0f6d6f14-f6c9-493e-9750-355131e9cb0f" />
 
 ---
 
@@ -166,6 +168,7 @@ systemctl status grafana-server
 ```bash
 curl -fsSL https://tailscale.com/install.sh | sh
 ```
+<img width="848" height="133" alt="Captura de pantalla 2025-10-20 184135" src="https://github.com/user-attachments/assets/75b0f9ee-49f6-430a-83ad-ab9ef31b698b" />
 
 #### Una vez instalado el servicio con el siguiente comando iniciamos la conexión
 ```bash
@@ -173,7 +176,7 @@ sudo tailscale up
 ```
 #### Aparecerá el siguiente enlace, donde podemos establece la conexión. Una vez validado el enlace este mandará un mensaje indicando que se conecto con exito.
 
-<img width="603" height="155" alt="imagen" src="https://github.com/user-attachments/assets/b5d1c1a2-a9b3-46e1-928f-0d467f67a5f8" />
+<img width="603" height="155" alt="Captura de pantalla 2025-10-20 184706" src="https://github.com/user-attachments/assets/6989ffba-c8ce-4c5d-b887-b4101dc58cc0" />
 
 ---
 
@@ -182,27 +185,26 @@ sudo tailscale up
 ```bash
 sudo apt install -y python3-venv
 ```
-<img width="656" height="110" alt="imagen" src="https://github.com/user-attachments/assets/61e49a73-6626-4c84-93c1-c3758d781caa" />
+<img width="656" height="110" alt="image" src="https://github.com/user-attachments/assets/dc777d39-6ea9-483f-be8c-d2fd260f2c56" />
 
 #### Crear y activar el entorno
 ```bash
 python3 -m venv env
 source env/bin/activate
 ```
-<img width="511" height="65" alt="imagen" src="https://github.com/user-attachments/assets/301f8baa-ab1e-45e0-8251-64045147fd0d" />
+<img width="511" height="65" alt="Captura de pantalla 2025-10-20 195126" src="https://github.com/user-attachments/assets/92374057-0700-48db-8eae-e61d69a08c7c" />
 
 #### Instalar librerias
 ```bash
 pip install paho-mqtt influxdb-client
 ```
-<img width="802" height="139" alt="imagen" src="https://github.com/user-attachments/assets/55a937c0-b858-44b7-b9d3-5cfba4f22d9a" />
+<img width="802" height="139" alt="Captura de pantalla 2025-10-20 195238" src="https://github.com/user-attachments/assets/2e483c1c-0b43-45b2-9f00-ab9f4c5faf08" />
 
 #### Creamos el archivo para agregar el código
 ```bash
 nano sensor.py
 ```
-<img width="1919" height="642" alt="imagen" src="https://github.com/user-attachments/assets/04fd1832-5ea5-4907-9b82-f941a2f74fd4" />
-
+<img width="1919" height="642" alt="Captura de pantalla 2025-10-20 232912" src="https://github.com/user-attachments/assets/aad1a2ef-59b8-46b9-a3cf-04b0befd2ec3" />
 
 #### Por último se inicia el programa
 ```bash
