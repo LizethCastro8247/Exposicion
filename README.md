@@ -18,6 +18,48 @@ Desarrollar un sistema integral de monitoreo de la calidad del aire que permita 
 # Justificación técnica
 El sistema permite monitorear en tiempo real los niveles de CO, NO₂ y O₃ mediante sensores simulados, publicando datos por MQTT, almacenándolos en InfluxDB 2 y visualizándolos en Grafana. La arquitectura en AWS y el acceso seguro con Tailscale garantizan disponibilidad, escalabilidad y confiabilidad, ofreciendo una herramienta eficiente para la gestión ambiental basada en datos, ofreciendo una herramienta eficiente para la gestión ambiental basada en datos y con capacidad de ampliación a sensores físicos y alertas automáticas.
 
+
+# Diagrama de arquitectua
+```bash
++-------------------+
+|  Sensores         |
+|  (CO, NO₂, O₃)    |
+|  Simulados        |
++---------+---------+
+          |
+          | Datos MQTT
+          v
++-------------------+
+|  Broker MQTT      |
+|  (Mosquitto)      |
+|  AWS / Local      |
++---------+---------+
+          |
+          | Suscripción y Publicación
+          v
++-------------------+             +--------------------+
+|  Python Script    |             |  Python Script     |
+|  Publicador +     |------------>|  Suscriptor +      |
+|  Simulador        |             |  InfluxDB Writer   |
++-------------------+             +---------+----------+
+                                             |
+                                             | Escritura de datos
+                                             v
+                                   +--------------------+
+                                   |  InfluxDB 2        |
+                                   |  Series Temporales |
+                                   +---------+----------+
+                                             |
+                                             | Consulta de datos
+                                             v
+                                   +--------------------+
+                                   | Grafana Dashboard  |
+                                   | Visualización y   |
+                                   | Análisis en tiempo |
+                                   | real               |
+                                   +--------------------+
+```
+
 ---
 
 # Desarrollo de Práctica
@@ -176,11 +218,21 @@ Los datos se imprimen en la consola
 
 ## InfluxDB
 Los datos se van almacenando
+Calidad de aire
 <img width="1920" height="1080" alt="Captura de pantalla 2025-10-20 214819" src="https://github.com/user-attachments/assets/bf1b8990-a4f9-4cf8-825b-7a4ee36ebec3" />
+
+Monóxido de carbono (Co)
+<img width="1917" height="883" alt="image" src="https://github.com/user-attachments/assets/40f8353f-327e-4a06-9c6f-2fed6fca5146" />
+
+Dióxido de nitrógeno (no2)
+<img width="1918" height="889" alt="image" src="https://github.com/user-attachments/assets/e9eb35c0-a83f-4d36-a0c7-2cbf97296d8d" />
+
+Ozono (O3)
+<img width="1919" height="879" alt="image" src="https://github.com/user-attachments/assets/89385f10-9097-4c1f-8200-5f697c5fb43c" />
 
 ## Grafana
 Se muestran cada uno de los datos
-<img width="1920" height="1080" alt="Captura de pantalla 2025-10-20 214843" src="https://github.com/user-attachments/assets/95b02218-891c-4530-bdbb-f6793037af4d" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/102216c1-aba4-48bc-ac81-b00f41226f66" />
 
 ## MQTT
 Desde la aplicación de "MQTT Explorer" en PC
