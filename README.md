@@ -172,21 +172,21 @@ pyhton3 sensor.py
 # Verificación
 ## Consola
 Los datos se imprimen en la consola
-<img width="1315" height="590" alt="imagen" src="https://github.com/user-attachments/assets/30e7a49c-1dce-407c-9d6d-39d0fca40d44" />
+<img width="1315" height="590" alt="Captura de pantalla 2025-10-20 214703" src="https://github.com/user-attachments/assets/8a58650d-e495-43c4-86a2-873e835a0bb7" />
 
 ## InfluxDB
 Los datos se van almacenando
-<img width="1920" height="1080" alt="imagen" src="https://github.com/user-attachments/assets/c1e84d80-b4ea-499b-8219-2ce511cc9629" />
+<img width="1920" height="1080" alt="Captura de pantalla 2025-10-20 214819" src="https://github.com/user-attachments/assets/bf1b8990-a4f9-4cf8-825b-7a4ee36ebec3" />
 
 ## Grafana
 Se muestran cada uno de los datos
-<img width="1920" height="1080" alt="imagen" src="https://github.com/user-attachments/assets/8eebaa53-1147-49e1-a6f2-dd266e12324f" />
+<img width="1920" height="1080" alt="Captura de pantalla 2025-10-20 214843" src="https://github.com/user-attachments/assets/95b02218-891c-4530-bdbb-f6793037af4d" />
 
 ## MQTT
 Desde la aplicación de "MQTT Explorer" en PC
-<img width="1264" height="892" alt="imagen" src="https://github.com/user-attachments/assets/5e98176c-12ef-4908-9742-d1c219204010" />
+<img width="1264" height="892" alt="Captura de pantalla 2025-10-20 220502" src="https://github.com/user-attachments/assets/c149d9ff-d99b-47b5-8dcb-ccab529c4a0d" />
 
 Desde la Aplicación de "MyMQTT" en dispositivo móvil
-![Imagen de WhatsApp 2025-10-20 a las 22 13 49_2d81b373](https://github.com/user-attachments/assets/e638bdd9-c72b-4e43-916b-1809ed1af9c2)
+![Captura de pantalla 2025-10-20 a las 22 13 49_2d81b373](https://github.com/user-attachments/assets/2512deaf-d492-4218-8842-c46c65a89ecb)
 
 ---
