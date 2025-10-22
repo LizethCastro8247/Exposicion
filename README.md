@@ -37,27 +37,27 @@ El sistema permite monitorear en tiempo real los niveles de CO, NO₂ y O₃ med
           |
           | Suscripción y Publicación
           v
-+-------------------+             +--------------------+
-|  Python Script    |             |  Python Script     |
-|  Publicador +     |------------>|  Suscriptor +      |
-|  Simulador        |             |  InfluxDB Writer   |
-+-------------------+             +---------+----------+
-                                             |
-                                             | Escritura de datos
-                                             v
-                                   +--------------------+
-                                   |  InfluxDB 2        |
-                                   |  Series Temporales |
-                                   +---------+----------+
-                                             |
-                                             | Consulta de datos
-                                             v
-                                   +--------------------+
-                                   | Grafana Dashboard  |
-                                   | Visualización y   |
-                                   | Análisis en tiempo |
-                                   | real               |
-                                   +--------------------+
++-------------------+ 
+|  Python Script    | 
+|  Publicador +     |
+|  Simulador        |  
++-------------------+  
+          |
+          | Escritura de datos
+          v
++--------------------+
+|  InfluxDB 2        |
+|  Series Temporales |
++---------+----------+
+          |
+          | Consulta de datos
+          v
++--------------------+
+| Grafana Dashboard  |
+| Visualización y    |
+| Análisis en tiempo |
+| real               |
++--------------------+
 ```
 
 ---
